@@ -44,6 +44,11 @@ const users = [
     }
   });
   
+  app.listen(PORT, () => {
+    console.log(`Server is listening on http://localhost:${PORT}`);
+  });
+ 
+  
   
 
   app.get('/api/users', (req, res) => {
