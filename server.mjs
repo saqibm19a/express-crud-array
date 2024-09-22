@@ -9,6 +9,12 @@ const users = [
     { id: 2, name: 'jan', email: 'jan@gmail.com' },
   ];
 
+  app.post('/api/users', (req, res) => {
+    const userId = users.length + 1;
+    const newUser = { id: userId, ...req.body };
+    users.push(newUser);
+    res.status(201).json({ message: 'Post Request - created a user', newUser });
+  });
   
 
   app.get('/api/users', (req, res) => {
